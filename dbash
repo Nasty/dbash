@@ -5,7 +5,9 @@ if [ "$1" == "update" ]; then
 	script="$0"
 	basename="$(dirname $script)"
 
-	wget https://raw.githubusercontent.com/Nasty/dbash/master/dbash -O $basename/dbash &>/dev/null
+	wget https://raw.githubusercontent.com/Nasty/dbash/master/dbash -O /tmp/dbash &>/dev/null
+        cat /tmp/dbash > $basename/dbash
+        rm /tmp/dbash
 	echo " done"
 	exit
 fi
